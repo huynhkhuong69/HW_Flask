@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST" novalidate>
+    {{ form.hidden_tag() }}
+
+    <p> {{ form.city_name.label }} <br>
+        {{ form.city_name(size=40) }}</p>
+
+    <p> {{ form.city_rank.label }} <br>
+        {{ form.city_rank(size=40) }}</p>
+
+    <p> {{ form.is_visited.label }} <br>
+        {{ form.is_visited() }}</p>
+
+    <p> {{ 'Submit' + form.submit() }}</p>
+</form>
+{% endblock %}           

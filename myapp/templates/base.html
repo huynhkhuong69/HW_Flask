@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% if title %}
+            <title>{{title}}!</title>
+        {% else %}
+            <title>Home</title>
+        {% endif %}
+    </head>
+    <body>
+         <div>
+             <h1><h1> Welcomee {{name}}, here are top destinations! </h1>
+             <p><a href="https://www.google.com">goooogle</a></p>
+         </div>
+        {% for message in get_flashed_messages() %}
+            <strong> {{message}}</strong>
+        {% endfor %}
+        <p>
+        <ul>
+            {% for m in top_cities|sort(attribute = 'city_rank') %}
+                <li> {{m}} </li>
+            {% endfor %}
+        </ul>
+        </p>
+    {% block content %}
+
+    {% endblock %}
+
+    </body>
+</html>
+
+
